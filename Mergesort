@@ -1,0 +1,89 @@
+#include<iostream>
+
+using namespace std;
+
+
+void merge1(int[],int,int);
+void merge(int[],int,int,int);
+int main()
+
+
+
+
+{
+int num[8],left,right,i,n;
+cout<<"Please Enter the number of elements:"<<endl;
+cin>>n;
+left=0;
+right=n-1;
+cout<<"Please Enter your numbers for the array:";
+for(i=0;i<n;i++)
+{
+     cin>>num[i];
+}
+merge1(num,left,right);
+cout<<"The sorted array is:";
+for(i=0;i<n;i++)
+{
+     cout<<"\n"<<num[i];
+}
+
+}
+
+
+
+
+void merge1(int num[],int left,int right)
+{
+     if( left < right)
+    {
+         int mid=(left+right)/2;
+         merge1(num,left,mid);
+         merge1(num,mid+1,right) ;
+         merge(num,left,mid,right);
+     }
+}
+
+
+
+
+void merge(int num[],int left,int mid,int right)
+{
+int a[10];
+int i=left;
+int leftend=mid+1;
+int b=left;
+while((i<=mid)&&(leftend<=right))
+{
+if(num[i]<num[leftend])
+{
+     a[b]=num[i];
+      i=i+1;
+     b=b+1;
+}
+else
+{
+     a[b]=num[leftend];
+      leftend=leftend+1;
+      b=b+1;
+}
+}
+while(i<=mid)
+{
+     a[b] =num[i];
+     i=i+1;
+     b=b+1;
+}
+while(leftend<=right)
+{
+     a[b]=num[leftend];
+     leftend=leftend+1;
+     b=b+1;
+}
+int l=left;
+while(l<=right)
+{
+num[l]=a[l];
+l=l+1;
+}
+}
