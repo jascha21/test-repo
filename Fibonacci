@@ -1,0 +1,28 @@
+#include <iostream>																																
+using namespace std;
+
+int n (int Fib)
+{
+    if(Fib < 2 )
+        return Fib;
+    else
+        return n(Fib - 1) + n(Fib - 2);
+}
+
+int main()
+{
+    cout << " Enter any number greater than 1 to begin the Fibonacci Sequnece: "<<endl;
+    cout<<endl;
+    
+	
+	
+	int j = 0;
+    cin >> j;
+
+
+cout<<endl;
+    cout << " The Fibonacci number is: " << n(j) << endl;
+
+    return 0;
+
+}					
