@@ -1,0 +1,37 @@
+#include <iostream>
+ 
+using namespace std;
+
+void sort(int arr[], int ln);
+void done(int arr2[],int ln2);
+ 
+int main() {
+ 
+int arr2[10]= {100,85,82,70,1,21,14,99,10,7};
+sort(arr2,10);
+ 
+ return 0;
+}
+ 
+void sort(int arr[], int ln) {
+ int i, j ,tmp;
+ for (i = 1; i < ln; i++) {
+ j = i;
+ while (j > 0 && arr[j - 1] > arr[j]) {
+ tmp = arr[j];
+ arr[j] = arr[j - 1];
+ arr[j - 1] = tmp;
+ j--;
+ }
+ done(arr,10);
+ }
+ }
+void done(int arr2[], int ln2){
+ 
+ cout<< "Sorting(Ascending Order) in progress: ";
+ int j;
+ for (j=0; j<ln2;j++)
+ for (j=0; j<ln2;j++)
+ cout <<" "<< arr2[j];
+ cout << endl;
+ }
